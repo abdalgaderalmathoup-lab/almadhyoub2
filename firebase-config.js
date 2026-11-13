@@ -18,5 +18,5 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// تصدير جميع الخدمات لكي تستخدمها باقي الملفات (auth.js, db.js, etc.)
+// تصدير جميع الخدمات لكي تستخدمها باقي الملفات
 export { app, firebaseConfig, auth, db };
