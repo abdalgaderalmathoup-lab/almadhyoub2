@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>المضيوب - النظام المحاسبي</title>
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="style.css">
-    <!-- كاشف الأخطاء التلقائي لمعرفة سبب الشاشة البيضاء على الجوال -->
+    <link rel="stylesheet" href="style.css?v=3">
+    <!-- كاشف الأخطاء التلقائي -->
     <script>
       window.onerror = function(msg, url, line) {
         alert("خطأ في التطبيق: " + msg + "\nفي الملف: " + url + "\nالسطر: " + line);
@@ -50,6 +50,7 @@
         </div>
     </div>
 
-    <script type="module" src="app.js"></script>
+    <!-- إضافة رقم إصدار إجباري لجلب النسخة المحدثة وتجنب الكاش -->
+    <script type="module" src="app.js?v=3"></script>
 </body>
 </html>
