@@ -1,0 +1,47 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isOwner(orgId) {
+      return isSignedIn() && resource.data.ownerId == request.auth.uid;
+    }
+
+    match /orgs/{orgId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update: if isSignedIn();
+      
+      match /accounts/{accId} {
+        allow read, write: if isSignedIn();
+      }
+      
+      match /sequences/{seqId} {
+        allow read, write: if isSignedIn();
+      }
+      
+      match /journal_entries/{entryId} {
+        allow read: if isSignedIn();
+        allow create: if isSignedIn() 
+                      && request.resource.data.debitTotal == request.resource.data.creditTotal
+                      && request.resource.data.status == 'posted';
+        allow update, delete: if false;
+      }
+      
+      match /parties/{partyId} {
+        allow read, write: if isSignedIn();
+      }
+      
+      match /warehouses/{whId} {
+        allow read, write: if isSignedIn();
+      }
+      
+      match /items/{itemId} {
+        allow read, write: if isSignedIn();
+      }
+    }
+  }
+}
