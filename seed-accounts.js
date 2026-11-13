@@ -1,5 +1,5 @@
 import { db } from './firebase-config.js';
-import { collection, doc, setDb, getDocs, setDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+import { collection, doc, getDocs, setDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 const DEFAULT_ACCOUNTS = [
   { id: "1000", name: "الأصول", type: "asset", isGroup: true },
@@ -26,7 +26,7 @@ const DEFAULT_ACCOUNTS = [
 export async function seedAccounts(orgId) {
   const accountsRef = collection(db, `orgs/${orgId}/accounts`);
   const snap = await getDocs(accountsRef);
-  if (!snap.empty) return; // تم الإنشاء مسبقاً
+  if (!snap.empty) return;
 
   for (const acc of DEFAULT_ACCOUNTS) {
     await setDoc(doc(accountsRef, acc.id), acc);
