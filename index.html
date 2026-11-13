@@ -6,6 +6,12 @@
     <title>المضيوب - النظام المحاسبي</title>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
+    <!-- كاشف الأخطاء التلقائي لمعرفة سبب الشاشة البيضاء على الجوال -->
+    <script>
+      window.onerror = function(msg, url, line) {
+        alert("خطأ في التطبيق: " + msg + "\nفي الملف: " + url + "\nالسطر: " + line);
+      };
+    </script>
 </head>
 <body>
     <div id="app">
