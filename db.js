@@ -1,5 +1,5 @@
 import { db } from './firebase-config.js';
-import { collection, doc, getDoc, setDoc, addDoc, getDocs, query, where, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+import { collection, doc, setDoc, getDocs, query, where, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 import { seedAccounts } from './seed-accounts.js';
 
 export async function getMembership(uid) {
@@ -13,7 +13,7 @@ export async function getMembership(uid) {
 }
 
 export async function createOrg(uid, email) {
-  const orgId = "org_" + Math.random().toString(36.2, 9);
+  const orgId = "org_" + Math.random().toString(36).substring(2, 9);
   const orgRef = doc(db, "orgs", orgId);
   
   await setDoc(orgRef, {
