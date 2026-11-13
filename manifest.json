@@ -1,17 +1,11 @@
 {
   "name": "المضيوب",
   "short_name": "المضيوب",
-  "start_url": "/",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f8fafc",
   "theme_color": "#1e3a8a",
   "dir": "rtl",
   "lang": "ar",
-  "icons": [
-    {
-      "src": "icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    }
-  ]
+  "icons": []
 }
