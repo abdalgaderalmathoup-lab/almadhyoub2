@@ -1,3 +1,4 @@
+import './firebase-config.js';
 import { login, logout, watchAuth } from './auth.js';
 import { getMembership, createOrg } from './db.js';
 import { postJournalEntry } from './accounting.js';
