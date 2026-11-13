@@ -13,7 +13,7 @@ export async function postJournalEntry(orgId, { date, description, lines, uid })
     if (d < 0 || c < 0) throw new Error("المبالغ لا يمكن أن تكون سالبة");
     if (d > 0 && c > 0) throw new Error("السطر لا يمكن أن يكون مدين ودائن معاً");
     if (d === 0 && c === 0) throw new Error("السطر فارغ");
-    if (!l.accountId) throw new Error("يحديد الحساب إلزامي");
+    if (!l.accountId) throw new Error("تحديد الحساب إلزامي");
     totalD += d;
     totalC += c;
   });
