@@ -120,3 +120,14 @@ body {
   margin-top: 10px;
   font-size: 14px;
 }
+
+input[type="text"], input[type="number"], select {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+  border-color: var(--primary);
+}
+
