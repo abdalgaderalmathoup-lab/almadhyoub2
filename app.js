@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // التنقل السفلي
   document.querySelectorAll('.nav-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
