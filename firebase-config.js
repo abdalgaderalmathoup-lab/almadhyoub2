@@ -1,18 +1,12 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { initializeFirestore, persistentLocalCache } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-
+// إعدادات الربط مع مشروع Firebase (almadhyoub2)
 const firebaseConfig = {
-  apiKey: "AIzaSy_YOUR_API_KEY_HERE",
-  authDomain: "almadhyoub.firebaseapp.com",
-  projectId: "almadhyoub",
-  storageBucket: "almadhyoub.appspot.com",
-  messagingSenderId: "123456789",
-  appId: "1:123456:web:abcd"
+  apiKey: "AIzaSyDdFkHr9h7dPMDYPGFCAQxF-2SRRFsV02s",
+  authDomain: "almadhyoub2.firebaseapp.com",
+  projectId: "almadhyoub2",
+  storageBucket: "almadhyoub2.firebasestorage.app",
+  messagingSenderId: "183992521523",
+  appId: "1:183992521523:web:0b64d1b68c74d89fd4a446"
 };
 
-const app = initializeApp(firebaseConfig);
-export const db = initializeFirestore(app, {
-  localCache: persistentLocalCache({})
-});
-export const auth = getAuth(app);
+// تصدير الإعدادات وتهيئة التطبيق (تأكد من توافقه مع طريقة الاستدعاء في app.js)
+export { firebaseConfig };
